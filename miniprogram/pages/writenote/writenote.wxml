@@ -1,0 +1,4 @@
+<view class="textareabox">
+<textarea class="" maxlength="-1" placeholder="点此输入内容" value="" placeholder-style="color:#ccc"></textarea>
+<button bindtap="toHome" ></button>
+</view>

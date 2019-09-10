@@ -1,0 +1,12 @@
+/* miniprogram/pages/writenote/writenote.wxss */
+.textareabox{
+  padding: 60rpx 50rpx 0rpx;
+  height: 100%;
+}
+page{
+  height: 100%;
+}
+textarea{
+  height: 100%;
+  width: 100%;
+}

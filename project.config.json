@@ -57,6 +57,13 @@
 					"id": -1,
 					"name": "pages/person/person",
 					"pathName": "pages/person/person",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/writenote/writenote",
+					"pathName": "pages/writenote/writenote",
 					"scene": null
 				}
 			]
