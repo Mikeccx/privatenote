@@ -3,9 +3,8 @@
 <button type="primary">添加</button>
 </view>
 <view class="content">
-<block wx:for="{11121111}">
    <view  class="content-title">
-   <text>闭上双眼</text>
+   <text>闭上双眼{{text}}</text>
+   <input value="{{text}}" bindinput="inputedit" ></input>
    </view>
-   </block>
 </view>
