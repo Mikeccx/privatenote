@@ -64,6 +64,13 @@
 					"id": -1,
 					"name": "pages/writenote/writenote",
 					"pathName": "pages/writenote/writenote",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/home/home",
+					"pathName": "pages/home/home",
 					"scene": null
 				}
 			]

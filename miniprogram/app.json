@@ -16,7 +16,8 @@
     "pages/openapi/cloudid/cloudid",
     "pages/im/im",
     "pages/im/room/room",
-    "pages/writenote/writenote"
+    "pages/writenote/writenote",
+    "pages/notespc/notespc"
   ],
   "tabBar": {
     "backgroundColor": "#2D333C",

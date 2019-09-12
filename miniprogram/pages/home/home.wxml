@@ -1,10 +1,10 @@
 <!--pages/home/home.wxml-->
 <view class="head-top">我的笔记
-<button type="primary">添加</button>
+<button type="primary" bindtap="toaddnote">添加</button>
 </view>
 <view class="content">
    <view  class="content-title">
    <text>闭上双眼{{text}}</text>
-   <input value="{{text}}" bindinput="inputedit" ></input>
+   <!-- <input value="{{text}}" bindinput="inputedit" ></input> -->
    </view>
 </view>

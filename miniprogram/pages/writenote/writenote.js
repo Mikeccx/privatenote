@@ -7,7 +7,15 @@ Page({
   data: {
 
   },
-
+  
+  send: function (e) {
+    wx.showToast({
+      title: '保存成功',
+      icon: 'success',
+      duration: 2000
+    })
+     console.log(e.detail.value)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
