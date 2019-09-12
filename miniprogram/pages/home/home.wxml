@@ -3,8 +3,9 @@
 <button type="primary" bindtap="toaddnote">添加</button>
 </view>
 <view class="content">
-   <view  class="content-title">
-   <text>闭上双眼{{text}}</text>
+   <view  class="content-title" wx:for="{{note}}" bindtap="tonotespc" data-idx='{{item._id}}'>
+   <text>{{item.notespc}} \n <text class="content-time">{{item.time}}</text></text>
+   
    <!-- <input value="{{text}}" bindinput="inputedit" ></input> -->
    </view>
 </view>

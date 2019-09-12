@@ -15,15 +15,21 @@
   height: 100%;
   margin-top: 100rpx;
 }
-
+text{
+  overflow: hidden;
+}
 .content-title {
   height: 150rpx;
   width: 80%;
-  line-height: 150rpx;
   margin: auto;
   font-weight: bold;
   font-size: 30rpx;
   border-bottom: solid 0.5px rgb(230, 226, 226);
+  display: flex;
+  align-items: center;
+}
+.content-time{
+  color: #ccc;
 }
 button{
   width: 130rpx;
