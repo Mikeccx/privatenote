@@ -1,11 +1,17 @@
 <!--pages/home/home.wxml-->
 <view class="head-top">我的笔记
-<button type="primary" bindtap="toaddnote">添加</button>
+  <button class="addbt" type="primary" bindtap="toaddnote">添加</button>
 </view>
 <view class="content">
-   <view  class="content-title" wx:for="{{note}}" bindtap="tonotespc" data-idx='{{item._id}}'>
-   <text>{{item.notespc}} \n <text class="content-time">{{item.time}}</text></text>
-   
-   <!-- <input value="{{text}}" bindinput="inputedit" ></input> -->
-   </view>
+  <view class="content-title" wx:for="{{note}}" wx:key="key" bindtap="tonotespc" data-idx='{{item._id}}'>
+    <text>{{item.notespc}} \n <text class="content-time">{{item.time}}</text></text>
+    <view>
+      <image src="/images/icon/options.png" catchtap="todel" data-index ="{{index}}"></image>
+    </view>
+    <!-- <input value="{{text}}" bindinput="inputedit" ></input> -->
+  </view>
 </view>
+
+<mp-dialog show="{{isdel}}" bindbuttontap="tapDialogButton" buttons="{{[{text: '取消'}, {text: '确认'}]}}">
+  <view>确定要删除?</view>
+</mp-dialog>

@@ -7,12 +7,9 @@ Page({
    */
   data: {
     "text": 'cx',
-    "note": []
-  },
-  change: function () {
-    this.setData({
-      text: 'ppp'
-    })
+    "note": [],
+    "isdel": false,
+    "index":0
   },
   //跳转到写日志
   toaddnote: function () {
@@ -29,6 +26,43 @@ Page({
     wx.navigateTo({
       url: '../writenote/writenote?id='+ e.currentTarget.dataset.idx
     })
+  },
+  todel: function (e) {
+    console.log(e.target.dataset.index)
+   this.setData({
+     isdel:!this.data.isdel,
+     index: e.target.dataset.index
+   })
+  },
+  tapDialogButton: function (e) {
+     console.log(this.data.note.splice(1,0))
+     
+     //确认
+    if (e.detail.index === 1){
+      const db = wx.cloud.database();
+      let newnote = this.data.note
+      let index = this.data.index
+      let that = this
+      console.log(this.data.note[index]._id)
+      db.collection('note').doc(this.data.note[index]._id).remove({
+        success: function (res) {
+          newnote.splice(index, 1)
+          that.setData({
+            note: newnote,
+            isdel: false
+          })
+          wx.showToast({
+            title: '已删除',
+          })
+        }
+      })
+    }
+    //取消
+    if (e.detail.index === 0) {
+       this.setData({
+         isdel: false
+       })
+    }
   },
   /**
    * 生命周期函数--监听页面加载

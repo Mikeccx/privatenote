@@ -7,7 +7,8 @@ Page({
   data: {
     date: '',
     id: '',
-    notespc: ''
+    notespc: '',
+    flag: 0
   },
   // onLoad: function(options) {
   //   if (app.globalData.openid) {
@@ -21,9 +22,10 @@ Page({
     const db = wx.cloud.database();
     let now = new Date();
     let time = now.toLocaleString();
-    if (e.detail.value !== '') {
-      return;
-    } else {
+    console.log(e.detail.value)
+    if (e.detail.value == '') {
+      console.log('what')
+    } else if(this.data.flag == 0){
       db.collection('note').add({
         data: {
           notespc: e.detail.value,
@@ -47,15 +49,21 @@ Page({
           console.error('[数据库] [新增记录] 失败：', err)
         }
       })
+    } else{
+      db.collection('note').doc(this.data.id).update({
+        // data 传入需要局部更新的数据
+        data: {
+          // 表示将 done 字段置为 true
+          notespc: e.detail.value,
+          time: time
+        },
+        success: function (res) {
+          wx.showToast({
+            title: '已保存',
+          })
+        }
+      })
     }
-  },
-  send: function(e) {
-    wx.showToast({
-      title: '保存成功',
-      icon: 'success',
-      duration: 2000
-    })
-    console.log(e.detail.value)
   },
   /**
    * 生命周期函数--监听页面加载
@@ -71,7 +79,9 @@ Page({
         success: function (res) {
           // res.data 包含该记录的数据
           that.setData({
-            notespc: res.data.notespc
+            notespc: res.data.notespc,
+            flag: 1,
+            id: options.id
           })
           console.log(res.data.notespc)
         }
