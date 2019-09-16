@@ -12,4 +12,4 @@
 
 # privatenote
 # 演示
-![](http://148.70.128.231:8080/staic/gif/private.gif)
+![image](https://github.com/Mikeccx/privatenote/blob/master/private0.gif) 
