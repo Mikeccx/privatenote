@@ -5,10 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    date: '',
-    id: '',
-    notespc: '',
-    flag: 0
+    date: '', //时间
+    id: '', // 笔记id
+    notespc: '', // 笔记内容
+    flag: 0 // 新建还是修改标志位
   },
   // onLoad: function(options) {
   //   if (app.globalData.openid) {
@@ -17,7 +17,14 @@ Page({
   //     })
   //   }
   // },
-  //写日志
+  //实现双向绑定
+  bind:function(e) {
+    console.log(e.detail.value);
+    this.setData({
+      notespc: e.detail.value
+    })
+  },
+  //写日志键盘点击完成
   onAdd: function(e) {
     const db = wx.cloud.database();
     let now = new Date();

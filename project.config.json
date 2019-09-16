@@ -9,7 +9,7 @@
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
-		"autoAudits": false,
+		"autoAudits": true,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
@@ -17,7 +17,9 @@
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		}
+		},
+		"bundle": true,
+		"uglifyFileName": true
 	},
 	"appid": "wxe392f6bded0b7fc4",
 	"projectname": "%E7%A7%81%E4%BA%BA%E7%AC%94%E8%AE%B0",
